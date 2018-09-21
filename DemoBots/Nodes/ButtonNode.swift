@@ -175,7 +175,7 @@ class ButtonNode: SKSpriteNode {
         return newButton
     }
     
-    func buttonTriggered() {
+    @objc func buttonTriggered() {
         if isUserInteractionEnabled {
             // Forward the button press event through to the responder.
             responder.buttonTriggered(button: self)

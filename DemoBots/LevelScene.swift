@@ -292,7 +292,6 @@ class LevelScene: BaseScene, SKPhysicsContactDelegate {
         let ySortedEntities = entities.sorted {
             let nodeA = $0.component(ofType: RenderComponent.self)!.node
             let nodeB = $1.component(ofType: RenderComponent.self)!.node
-            _ = $1
             return nodeA.position.y > nodeB.position.y
         }
         

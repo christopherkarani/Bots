@@ -61,7 +61,7 @@ extension float2 {
         let componentInSegment = projectionAlongSegment / lineLengthSquared
         
         // Clamps the component between [0 - 1].
-        let fractionOfComponent = max(0, min(1, componentInSegment))
+        let fractionOfComponent = Swift.max(0, Swift.min(1, componentInSegment))
         
         return lineSegment.startPoint + lineSegmentVector * fractionOfComponent
     }

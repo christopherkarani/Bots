@@ -13,14 +13,14 @@ extension BaseScene: ButtonNodeResponderType {
     
     /// Searches the scene for all `ButtonNode`s.
     func findAllButtonsInScene() -> [ButtonNode] {
-        return ButtonIdentifier.allButtonIdentifiers.flatMap { buttonIdentifier in
+        return ButtonIdentifier.allButtonIdentifiers.compactMap { buttonIdentifier in
             childNode(withName: "//\(buttonIdentifier.rawValue)") as? ButtonNode
         }
     }
     
     // MARK: ButtonNodeResponderType
     
-    func buttonTriggered(button: ButtonNode) {
+    @objc func buttonTriggered(button: ButtonNode) {
         switch button.buttonIdentifier! {
             case .home:
                 sceneManager.transitionToScene(identifier: .home)

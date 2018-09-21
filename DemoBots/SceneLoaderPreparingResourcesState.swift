@@ -90,7 +90,7 @@ class SceneLoaderPreparingResourcesState: GKState {
             Create an `NSProgress` object with the total unit count equal to the number of entities that
             need to be loaded plus a unit for loading the scene itself.
         */
-        let loadingProgress = Progress(totalUnitCount: sceneMetadata.loadableTypes.count + 1)
+        let loadingProgress = Progress(totalUnitCount: Int64(sceneMetadata.loadableTypes.count + 1))
         
         // Add the `SceneLoaderPreparingResourcesState`'s progress to the overall `sceneLoader`'s progress.
         sceneLoader.progress?.addChild(loadingProgress, withPendingUnitCount: 1)
